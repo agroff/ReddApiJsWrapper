@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ReddApi Javascript Wrapper</title>
+    <link type="text/css" rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+
+
+    <!--  Third Party -->
+    <script src="http://code.jquery.com/jquery-git1.min.js"></script>
+    <script src="http://cdn.foundation5.zurb.com/foundation.js"></script>
+    <script src="lib/prettyprint.js"></script>
+
+    <!--  Basic Namespace Creation -->
+    <script src="initialize.js"></script>
+
+    <!--  jQuery HttpRequest Implementation -->
+    <script src="src/HttpRequest.js"></script>
+
+    <!--  Actual API Wrapper -->
+    <script src="src/ReddApi.js"></script>
+
+    <!--  Usage Example -->
+    <script src="MY_APP.js"></script>
+</head>
+<body>
+
+
+<div class="row">
+    <div class="large-12 columns">
+        <h1>ReddApi <small>Javascript Wrapper Usage Examples</small></h1>
+        <hr/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-6 columns" role="content">
+
+        <article>
+
+            <h3>Before Starting</h3>
+
+            <p>
+                By default, these examples will attempt to communicate directly with ReddAPI.com. These attempts will be
+                futile as your browser will block the HTTP Requests due to the same origin policy. To get around this,
+                you need to
+                <a target="_blank" href="http://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome">
+                start chrome with security turned off.
+                </a>
+                like so:
+            </p>
+
+            <code>
+                google-chrome --disable-web-security
+            </code>
+
+            <p>
+                Do that at your own risk. Alternatively, if you have php running here, use the quick proxy I wrote by
+                uncommenting this line:
+            </p>
+
+            <code>
+                MY_APP.ReddApi.setBaseUrl('proxy.php?url=https://api.reddapi.com');
+            </code>
+
+        </article>
+
+        <hr/>
+
+        <article>
+            <h3>Getting Started</h3>
+
+            <p>
+                First, open up `MY_APP.js`. The code is commented fairly well, so start reading at the top.
+                We start by setting API keys, which you'll need to do. Then we set an error handler and override
+                the base URL, both of which are optional. The base url allows you to use a local proxy, as demonstrated.
+            </p>
+            <p>
+                Once you're finished, try to list your users to see if it worked:
+            </p>
+
+            <button class="small radius button" id="listUsers">
+                List Users
+            </button>
+            <p>
+                If you didn't get an error, move on to step two.
+            </p>
+        </article>
+
+        <hr/>
+
+        <article>
+            <h3>Step 2</h3>
+
+            <p>
+                Now we're gonna create users. Click the button:
+            </p>
+
+            <button class="small radius button" id="createUsers">
+                Create Users
+            </button>
+
+            <p>
+                If everything worked right, you should now have two new users. You can list the users again to make sure.
+            </p>
+
+        </article>
+
+        <hr/>
+
+        <article>
+            <h3>Step 3</h3>
+
+            <p>
+                Awesome. Now lets check their balances.
+            </p>
+
+            <button class="small radius button" id="checkBalances">
+                Check Balances
+            </button>
+
+            <p>
+                They should both be at zero.
+            </p>
+
+        </article>
+
+        <hr/>
+
+        <article>
+            <h3>Step 4</h3>
+
+            <p>
+                Now we're gonna send 50 ReddCoins from TestUserOne to TestUserTwo. First, you need to send some coins to
+                TestUserOne. Find his address (using List Users) and send more than 50 coins there. Use the check balance
+                feature until you see they've been confirmed. Then use the transfer button below.
+            </p>
+
+            <button class="small radius button" id="transferCoins">
+                Transfer 50 RDD from TestUserOne to TestUserTwo
+            </button>
+
+            <p>
+                You can check balances again to see how it worked.
+            </p>
+
+        </article>
+
+        <hr/>
+
+        <article>
+            <h3>Step 5</h3>
+
+            <p>
+                Now for the last step, withdrawing your coins from the API. It's currently set up to send 50 coins from
+                TestUserTwo to MY ADDRESS! You should change that to your address if you don't want to give me your
+                hard earned coins. You can also change the user or the amount, and when its ready, hit the button:
+            </p>
+
+            <button class="small radius button" id="withdrawCoins">
+                Withdraw Coins
+            </button>
+
+            <p>
+                The coins should arrive to the address you specified shortly. THE END!
+            </p>
+
+        </article>
+
+        <hr/>
+
+    </div>
+
+    <aside class="large-6 columns consoleContainer">
+
+        <div class="panel" id="console">
+            <h5>Output Console</h5>
+            <code id="outputConsole">
+            </code>
+
+        </div>
+
+        <div>&nbsp;</div>
+
+    </aside>
+
+</div>
+
+
+
+
+
+<footer class="row">
+    <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+            <div class="large-6 columns">
+                <p>Congrats. You're reading the bottom of the page.</p>
+            </div>
+            <div class="large-6 columns">
+                <ul class="inline-list right">
+                    <li><a href="#">ReddAPI JS Github Repo</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+body{
+}
+footer.row,
+footer{
+    margin-bottom:80px;
+    margin-top:400px;
+}
+.row{
+    max-width: 76.5rem;
+}
+.consoleContainer{
+}
+#console{
+    z-index: 3;
+    position:fixed;
+    top: 104px;
+}
+#outputConsole
+{
+    display: block;
+    height: 410px;
+    overflow:auto;
+}
+#outputConsole p
+{
+    margin:0px;
+}
+.panel code p,
+code{
+    font-size: 14px;
+
+}
+article code{
+    border: 1px solid #000000;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    background-color: #2B2B2B;
+    margin-bottom: 10px;
+    color: #00FA0A;
+    white-space: nowrap;
+    overflow: auto;
+}
+.panel code p
+{
+    color: #000d5b;
+}
+.panel code p.error
+{
+    color: #F00;
+}
